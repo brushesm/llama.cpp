@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseRevision|x64">
+      <Configuration>ReleaseRevision</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{2BC72810-9C7A-420B-A977-FD65A9636DE9}</ProjectGuid>
+    <RootNamespace>llama</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseRevision|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseRevision|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>llama</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>llama</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseRevision|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>llama</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseRevision|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\llama-adapter.cpp" />
+    <ClCompile Include="src\llama-arch.cpp" />
+    <ClCompile Include="src\llama-batch.cpp" />
+    <ClCompile Include="src\llama-chat.cpp" />
+    <ClCompile Include="src\llama-context.cpp" />
+    <ClCompile Include="src\llama-cparams.cpp" />
+    <ClCompile Include="src\llama-grammar.cpp" />
+    <ClCompile Include="src\llama-graph.cpp" />
+    <ClCompile Include="src\llama-hparams.cpp" />
+    <ClCompile Include="src\llama-impl.cpp" />
+    <ClCompile Include="src\llama-io.cpp" />
+    <ClCompile Include="src\llama-kv-cache-iswa.cpp" />
+    <ClCompile Include="src\llama-kv-cache.cpp" />
+    <ClCompile Include="src\llama-memory-hybrid.cpp" />
+    <ClCompile Include="src\llama-memory-recurrent.cpp" />
+    <ClCompile Include="src\llama-memory.cpp" />
+    <ClCompile Include="src\llama-mmap.cpp" />
+    <ClCompile Include="src\llama-model-loader.cpp" />
+    <ClCompile Include="src\llama-model-saver.cpp" />
+    <ClCompile Include="src\llama-model.cpp" />
+    <ClCompile Include="src\llama-quant.cpp" />
+    <ClCompile Include="src\llama-sampling.cpp" />
+    <ClCompile Include="src\llama-vocab.cpp" />
+    <ClCompile Include="src\llama.cpp" />
+    <ClCompile Include="src\unicode-data.cpp" />
+    <ClCompile Include="src\unicode.cpp" />
+    <ClCompile Include="src\models\afmoe.cpp" />
+    <ClCompile Include="src\models\apertus.cpp" />
+    <ClCompile Include="src\models\arcee.cpp" />
+    <ClCompile Include="src\models\arctic.cpp" />
+    <ClCompile Include="src\models\arwkv7.cpp" />
+    <ClCompile Include="src\models\baichuan.cpp" />
+    <ClCompile Include="src\models\bailingmoe.cpp" />
+    <ClCompile Include="src\models\bailingmoe2.cpp" />
+    <ClCompile Include="src\models\bert.cpp" />
+    <ClCompile Include="src\models\bitnet.cpp" />
+    <ClCompile Include="src\models\bloom.cpp" />
+    <ClCompile Include="src\models\chameleon.cpp" />
+    <ClCompile Include="src\models\chatglm.cpp" />
+    <ClCompile Include="src\models\codeshell.cpp" />
+    <ClCompile Include="src\models\cogvlm.cpp" />
+    <ClCompile Include="src\models\cohere2-iswa.cpp" />
+    <ClCompile Include="src\models\command-r.cpp" />
+    <ClCompile Include="src\models\dbrx.cpp" />
+    <ClCompile Include="src\models\deci.cpp" />
+    <ClCompile Include="src\models\deepseek.cpp" />
+    <ClCompile Include="src\models\deepseek2.cpp" />
+    <ClCompile Include="src\models\dots1.cpp" />
+    <ClCompile Include="src\models\dream.cpp" />
+    <ClCompile Include="src\models\ernie4-5-moe.cpp" />
+    <ClCompile Include="src\models\ernie4-5.cpp" />
+    <ClCompile Include="src\models\exaone.cpp" />
+    <ClCompile Include="src\models\exaone4.cpp" />
+    <ClCompile Include="src\models\falcon-h1.cpp" />
+    <ClCompile Include="src\models\falcon.cpp" />
+    <ClCompile Include="src\models\gemma-embedding.cpp" />
+    <ClCompile Include="src\models\gemma.cpp" />
+    <ClCompile Include="src\models\gemma2-iswa.cpp" />
+    <ClCompile Include="src\models\gemma3.cpp" />
+    <ClCompile Include="src\models\gemma3n-iswa.cpp" />
+    <ClCompile Include="src\models\glm4-moe.cpp" />
+    <ClCompile Include="src\models\glm4.cpp" />
+    <ClCompile Include="src\models\gpt2.cpp" />
+    <ClCompile Include="src\models\gptneox.cpp" />
+    <ClCompile Include="src\models\granite-hybrid.cpp" />
+    <ClCompile Include="src\models\granite.cpp" />
+    <ClCompile Include="src\models\graph-context-mamba.cpp" />
+    <ClCompile Include="src\models\grok.cpp" />
+    <ClCompile Include="src\models\grovemoe.cpp" />
+    <ClCompile Include="src\models\hunyuan-dense.cpp" />
+    <ClCompile Include="src\models\hunyuan-moe.cpp" />
+    <ClCompile Include="src\models\internlm2.cpp" />
+    <ClCompile Include="src\models\jais.cpp" />
+    <ClCompile Include="src\models\jamba.cpp" />
+    <ClCompile Include="src\models\lfm2.cpp" />
+    <ClCompile Include="src\models\llada-moe.cpp" />
+    <ClCompile Include="src\models\llada.cpp" />
+    <ClCompile Include="src\models\llama-iswa.cpp" />
+    <ClCompile Include="src\models\llama.cpp">
+      <ObjectFileName>$(IntDir)models_llama.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\models\maincoder.cpp" />
+    <ClCompile Include="src\models\mamba.cpp" />
+    <ClCompile Include="src\models\mimo2-iswa.cpp" />
+    <ClCompile Include="src\models\minicpm3.cpp" />
+    <ClCompile Include="src\models\minimax-m2.cpp" />
+    <ClCompile Include="src\models\mistral3.cpp" />
+    <ClCompile Include="src\models\modern-bert.cpp" />
+    <ClCompile Include="src\models\mpt.cpp" />
+    <ClCompile Include="src\models\nemotron-h.cpp" />
+    <ClCompile Include="src\models\nemotron.cpp" />
+    <ClCompile Include="src\models\neo-bert.cpp" />
+    <ClCompile Include="src\models\olmo.cpp" />
+    <ClCompile Include="src\models\olmo2.cpp" />
+    <ClCompile Include="src\models\olmoe.cpp" />
+    <ClCompile Include="src\models\openai-moe-iswa.cpp" />
+    <ClCompile Include="src\models\openelm.cpp" />
+    <ClCompile Include="src\models\orion.cpp" />
+    <ClCompile Include="src\models\pangu-embedded.cpp" />
+    <ClCompile Include="src\models\phi2.cpp" />
+    <ClCompile Include="src\models\phi3.cpp" />
+    <ClCompile Include="src\models\plamo.cpp" />
+    <ClCompile Include="src\models\plamo2.cpp" />
+    <ClCompile Include="src\models\plamo3.cpp" />
+    <ClCompile Include="src\models\plm.cpp" />
+    <ClCompile Include="src\models\qwen.cpp" />
+    <ClCompile Include="src\models\qwen2.cpp" />
+    <ClCompile Include="src\models\qwen2moe.cpp" />
+    <ClCompile Include="src\models\qwen2vl.cpp" />
+    <ClCompile Include="src\models\qwen3.cpp" />
+    <ClCompile Include="src\models\qwen3moe.cpp" />
+    <ClCompile Include="src\models\qwen3next.cpp" />
+    <ClCompile Include="src\models\qwen3vl-moe.cpp" />
+    <ClCompile Include="src\models\qwen3vl.cpp" />
+    <ClCompile Include="src\models\refact.cpp" />
+    <ClCompile Include="src\models\rnd1.cpp" />
+    <ClCompile Include="src\models\rwkv6-base.cpp" />
+    <ClCompile Include="src\models\rwkv6.cpp" />
+    <ClCompile Include="src\models\rwkv6qwen2.cpp" />
+    <ClCompile Include="src\models\rwkv7-base.cpp" />
+    <ClCompile Include="src\models\rwkv7.cpp" />
+    <ClCompile Include="src\models\seed-oss.cpp" />
+    <ClCompile Include="src\models\smallthinker.cpp" />
+    <ClCompile Include="src\models\smollm3.cpp" />
+    <ClCompile Include="src\models\stablelm.cpp" />
+    <ClCompile Include="src\models\starcoder.cpp" />
+    <ClCompile Include="src\models\starcoder2.cpp" />
+    <ClCompile Include="src\models\t5-dec.cpp" />
+    <ClCompile Include="src\models\t5-enc.cpp" />
+    <ClCompile Include="src\models\wavtokenizer-dec.cpp" />
+    <ClCompile Include="src\models\xverse.cpp" />
+    <ClCompile Include="ggml\src\ggml.c" />
+    <ClCompile Include="ggml\src\ggml.cpp" />
+    <ClCompile Include="ggml\src\ggml-alloc.c" />
+    <ClCompile Include="ggml\src\ggml-backend.cpp" />
+    <ClCompile Include="ggml\src\ggml-backend-reg.cpp" />
+    <ClCompile Include="ggml\src\ggml-opt.cpp" />
+    <ClCompile Include="ggml\src\ggml-quants.c" />
+    <ClCompile Include="ggml\src\ggml-threading.cpp" />
+    <ClCompile Include="ggml\src\gguf.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\ggml-cpu.c">
+      <ObjectFileName>$(IntDir)ggml-cpu-c.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="ggml\src\ggml-cpu\ggml-cpu.cpp">
+      <ObjectFileName>$(IntDir)ggml-cpu-cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="ggml\src\ggml-cpu\binary-ops.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\unary-ops.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\vec.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\ops.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\quants.c" />
+    <ClCompile Include="ggml\src\ggml-cpu\repack.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\traits.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\hbm.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\arch\x86\cpu-feats.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\arch\x86\quants.c">
+      <ObjectFileName>$(IntDir)x86_quants.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="ggml\src\ggml-cpu\arch\x86\repack.cpp">
+      <ObjectFileName>$(IntDir)x86_repack.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="ggml\src\ggml-cpu\amx\amx.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\amx\mmq.cpp" />
+    <ClCompile Include="ggml\src\ggml-cpu\llamafile\sgemm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\llama.h" />
+    <ClInclude Include="include\llama-cpp.h" />
+    <ClInclude Include="ggml\include\ggml.h" />
+    <ClInclude Include="ggml\include\ggml-alloc.h" />
+    <ClInclude Include="ggml\include\ggml-backend.h" />
+    <ClInclude Include="ggml\include\ggml-cpu.h" />
+    <ClInclude Include="ggml\include\ggml-opt.h" />
+    <ClInclude Include="ggml\include\gguf.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
