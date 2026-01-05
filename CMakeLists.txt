@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.14) # for add_link_options and implicit target directories.
+cmake_minimum_required(VERSION 3.15) # 3.15 required for CMAKE_MSVC_RUNTIME_LIBRARY
 project("llama.cpp" C CXX)
+
+# Use dynamic CRT to match Pixcen's MFC configuration (/MD for Release, /MDd for Debug)
+# This MUST be set before any targets are defined
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL" CACHE STRING "" FORCE)
 include(CheckIncludeFileCXX)
 
 #set(CMAKE_WARN_DEPRECATED YES)
@@ -70,6 +74,10 @@ if (MSVC)
     add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:/utf-8>")
     add_compile_options("$<$<COMPILE_LANGUAGE:C>:/bigobj>")
     add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:/bigobj>")
+
+    # Use dynamic CRT to match Pixcen's MFC configuration
+    # /MD for Release, /MDd for Debug (instead of static /MT, /MTd)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
 endif()
 
 if (LLAMA_STANDALONE)

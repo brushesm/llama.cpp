@@ -68,7 +68,7 @@
     <TargetName>llama</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseRevision|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>llama</TargetName>
   </PropertyGroup>
