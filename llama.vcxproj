@@ -76,11 +76,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_USE_VULKAN;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)ggml\src\ggml-vulkan;$(MSBuildThisFileDirectory)ggml\src\ggml-vulkan\generated;$(MSBuildThisFileDirectory)src;$(VULKAN_SDK)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -90,6 +90,14 @@
       <AdditionalDependencies>
       </AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>if "$(VULKAN_SDK)"=="" (
+  echo ERROR: VULKAN_SDK environment variable is not set. Please install Vulkan SDK and restart Visual Studio.
+  exit /b 1
+)
+call "$(MSBuildThisFileDirectory)generate-vulkan-shaders.bat" "$(SolutionDir)$(Platform)\$(Configuration)\vulkan-shaders-gen.exe"</Command>
+      <Message>Generating Vulkan shaders...</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -97,11 +105,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_USE_VULKAN;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)ggml\src\ggml-vulkan;$(MSBuildThisFileDirectory)ggml\src\ggml-vulkan\generated;$(MSBuildThisFileDirectory)src;$(VULKAN_SDK)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -114,6 +122,14 @@
       <AdditionalDependencies>
       </AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>if "$(VULKAN_SDK)"=="" (
+  echo ERROR: VULKAN_SDK environment variable is not set. Please install Vulkan SDK and restart Visual Studio.
+  exit /b 1
+)
+call "$(MSBuildThisFileDirectory)generate-vulkan-shaders.bat" "$(SolutionDir)$(Platform)\$(Configuration)\vulkan-shaders-gen.exe"</Command>
+      <Message>Generating Vulkan shaders...</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseRevision|x64'">
     <ClCompile>
@@ -121,11 +137,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_USE_LLAMAFILE;GGML_USE_VULKAN;GGML_VERSION="0.9.5";GGML_COMMIT="";GGML_BACKEND_API=extern;GGML_API=extern;LLAMA_API=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;$(MSBuildThisFileDirectory)ggml\include;$(MSBuildThisFileDirectory)ggml\src;$(MSBuildThisFileDirectory)ggml\src\ggml-cpu;$(MSBuildThisFileDirectory)ggml\src\ggml-vulkan;$(MSBuildThisFileDirectory)ggml\src\ggml-vulkan\generated;$(MSBuildThisFileDirectory)src;$(VULKAN_SDK)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalOptions>/utf-8 /bigobj %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -138,6 +154,14 @@
       <AdditionalDependencies>
       </AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>if "$(VULKAN_SDK)"=="" (
+  echo ERROR: VULKAN_SDK environment variable is not set. Please install Vulkan SDK and restart Visual Studio.
+  exit /b 1
+)
+call "$(MSBuildThisFileDirectory)generate-vulkan-shaders.bat" "$(SolutionDir)$(Platform)\Release\vulkan-shaders-gen.exe"</Command>
+      <Message>Generating Vulkan shaders...</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\llama-adapter.cpp" />
@@ -304,6 +328,156 @@
     <ClCompile Include="ggml\src\ggml-cpu\amx\amx.cpp" />
     <ClCompile Include="ggml\src\ggml-cpu\amx\mmq.cpp" />
     <ClCompile Include="ggml\src\ggml-cpu\llamafile\sgemm.cpp" />
+    <!-- Vulkan backend -->
+    <ClCompile Include="ggml\src\ggml-vulkan\ggml-vulkan.cpp" />
+    <!-- Generated Vulkan shaders (contains SPIR-V bytecode) - one .cpp per shader -->
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\abs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\acc.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\add.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\add1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\add_id.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\arange.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\argmax.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\argsort.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\argsort_large.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\ceil.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\clamp.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\concat.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\contig_copy.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\conv2d_dw.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\conv2d_mm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\conv_transpose_1d.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy_from_quant.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy_to_quant.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy_transpose.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cos.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\count_equal.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\count_experts.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cumsum.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cumsum_multipass1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cumsum_multipass2.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_f32.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq1_m.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq1_s.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq2_s.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq2_xs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq2_xxs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq3_s.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq3_xxs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq4_nl.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq4_xs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_mxfp4.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q2_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q3_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q4_0.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q4_1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q4_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q5_0.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q5_1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q5_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q6_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q8_0.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\diag.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\diag_mask_inf.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\div.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\exp.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\fill.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn_cm1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn_cm2.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn_split_k_reduce.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\floor.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\geglu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\geglu_erf.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\geglu_quick.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\gelu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\gelu_erf.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\gelu_quick.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\get_rows.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\get_rows_quant.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\group_norm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\hardsigmoid.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\hardswish.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\im2col.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\im2col_3d.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\l2_norm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\leaky_relu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\log.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_split_k_reduce.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq1_m.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq1_s.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq2_s.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq2_xs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq2_xxs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq3_s.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq3_xxs.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_nc.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_p021.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q2_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q3_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q4_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q5_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q6_k.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vecq.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mm_cm2.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mmq.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\multi_add.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\neg.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\norm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\opt_step_adamw.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\opt_step_sgd.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\pad.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\pool2d.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\quantize_q8_1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\reglu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\relu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\repeat.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\repeat_back.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rms_norm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rms_norm_back.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rms_norm_partials.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\roll.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_multi.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_neox.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_norm.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_vision.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\round.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\scale.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sigmoid.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\silu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\silu_back.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sin.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_back.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_large1.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_large2.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_large3.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\softplus.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\solve_tri.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sqrt.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\square.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\ssm_conv.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\ssm_scan.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\step.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sub.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sum_rows.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\swiglu.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\swiglu_oai.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\tanh.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\timestep_embedding.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\topk_argsort.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\topk_moe.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\topk_nary_search.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\tri.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\trunc.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\upscale.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\wkv6.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\wkv7.comp.cpp" />
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\xielu.comp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\llama.h" />
@@ -314,6 +488,12 @@
     <ClInclude Include="ggml\include\ggml-cpu.h" />
     <ClInclude Include="ggml\include\ggml-opt.h" />
     <ClInclude Include="ggml\include\gguf.h" />
+    <ClInclude Include="ggml\include\ggml-vulkan.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vulkan-shaders-gen.vcxproj">
+      <Project>{8A1C5E3F-9B2D-4F7A-8E6C-3D0A1B2C4E5F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

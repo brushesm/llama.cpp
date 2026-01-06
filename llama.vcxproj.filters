@@ -463,6 +463,9 @@
     <ClCompile Include="ggml\src\ggml-cpu\llamafile\sgemm.cpp">
       <Filter>ggml\cpu\llamafile</Filter>
     </ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\ggml-vulkan.cpp">
+      <Filter>ggml\vulkan</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\llama.h">
@@ -489,6 +492,9 @@
     <ClInclude Include="ggml\include\gguf.h">
       <Filter>ggml\include</Filter>
     </ClInclude>
+    <ClInclude Include="ggml\include\ggml-vulkan.h">
+      <Filter>ggml\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ggml">
@@ -508,6 +514,9 @@
     </Filter>
     <Filter Include="ggml\include">
       <UniqueIdentifier>{8B800A4A-4C3D-4597-953F-4DA19F43F756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ggml\vulkan">
+      <UniqueIdentifier>{C5A7E8F1-2B3D-4A6E-9F8C-1D2E3F4A5B6C}</UniqueIdentifier>
     </Filter>
     <Filter Include="include">
       <UniqueIdentifier>{82819725-259A-42BD-9DE7-F0F1CA231BF0}</UniqueIdentifier>
