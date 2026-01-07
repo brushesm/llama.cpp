@@ -463,6 +463,156 @@
     <ClCompile Include="ggml\src\ggml-cpu\llamafile\sgemm.cpp">
       <Filter>ggml\cpu\llamafile</Filter>
     </ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\ggml-vulkan.cpp">
+      <Filter>ggml\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\abs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\acc.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\add.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\add1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\add_id.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\arange.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\argmax.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\argsort.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\argsort_large.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\ceil.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\clamp.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\concat.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\contig_copy.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\conv_transpose_1d.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\conv2d_dw.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\conv2d_mm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy_from_quant.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy_to_quant.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\copy_transpose.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cos.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\count_equal.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\count_experts.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cumsum.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cumsum_multipass1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\cumsum_multipass2.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_f32.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq1_m.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq1_s.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq2_s.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq2_xs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq2_xxs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq3_s.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq3_xxs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq4_nl.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_iq4_xs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_mxfp4.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q2_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q3_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q4_0.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q4_1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q4_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q5_0.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q5_1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q5_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q6_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\dequant_q8_0.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\diag.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\diag_mask_inf.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\div.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\exp.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\fill.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn_cm1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn_cm2.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\flash_attn_split_k_reduce.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\floor.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\geglu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\geglu_erf.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\geglu_quick.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\gelu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\gelu_erf.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\gelu_quick.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\get_rows.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\get_rows_quant.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\group_norm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\hardsigmoid.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\hardswish.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\im2col.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\im2col_3d.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\l2_norm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\leaky_relu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\log.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_split_k_reduce.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq1_m.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq1_s.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq2_s.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq2_xs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq2_xxs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq3_s.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_iq3_xxs.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_nc.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_p021.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q2_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q3_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q4_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q5_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vec_q6_k.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mat_vecq.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mm_cm2.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\mul_mmq.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\multi_add.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\neg.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\norm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\opt_step_adamw.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\opt_step_sgd.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\pad.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\pool2d.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\quantize_q8_1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\reglu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\relu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\repeat.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\repeat_back.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rms_norm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rms_norm_back.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rms_norm_partials.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\roll.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_multi.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_neox.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_norm.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\rope_vision.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\round.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\scale.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sigmoid.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\silu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\silu_back.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sin.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_back.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_large1.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_large2.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\soft_max_large3.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\softplus.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\solve_tri.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sqrt.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\square.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\ssm_conv.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\ssm_scan.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\step.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sub.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\sum_rows.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\swiglu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\swiglu_oai.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\tanh.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\timestep_embedding.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\topk_argsort.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\topk_moe.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\topk_nary_search.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\tri.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\trunc.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\upscale.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\wkv6.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\wkv7.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
+    <ClCompile Include="ggml\src\ggml-vulkan\generated\xielu.comp.cpp"><Filter>ggml\vulkan\generated</Filter></ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\llama.h">
@@ -517,6 +667,12 @@
     </Filter>
     <Filter Include="src\models">
       <UniqueIdentifier>{DFC27429-A4EF-4000-9AB6-AD5A4F3BCF85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ggml\vulkan">
+      <UniqueIdentifier>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ggml\vulkan\generated">
+      <UniqueIdentifier>{B2C3D4E5-F6A7-8901-BCDE-F12345678901}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

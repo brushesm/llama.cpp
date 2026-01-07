@@ -138,3 +138,4 @@ poetry.toml
 # emscripten
 a.out.*
 x64/
+/ggml/src/ggml-vulkan/generated
