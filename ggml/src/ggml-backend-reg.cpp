@@ -196,7 +196,10 @@ struct ggml_backend_registry {
         register_backend(ggml_backend_sycl_reg());
 #endif
 #ifdef GGML_USE_VULKAN
-        register_backend(ggml_backend_vk_reg());
+        const char * disable_vulkan = std::getenv("GGML_DISABLE_VULKAN");
+        if (!disable_vulkan || disable_vulkan[0] == '\0' || strcmp(disable_vulkan, "0") == 0) {
+            register_backend(ggml_backend_vk_reg());
+        }
 #endif
 #ifdef GGML_USE_WEBGPU
         register_backend(ggml_backend_webgpu_reg());
